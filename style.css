@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#toggle{
+    width: 250px;
+    height: 250px;
+    border: 5px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#toggle1{
+    width: 100px;
+    height: 40px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.container-3{
+    position: relative;
+    margin-top: 25px;
+    overflow: hidden;
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+    border: 2px solid red;
+}
+img{
+    width: 100%;  
+    position: relative;
+}
