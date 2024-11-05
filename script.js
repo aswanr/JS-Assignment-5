@@ -31,10 +31,10 @@ function changes() {
 // their corresponding names. In a div show the fruit names which are checked.
 
 const fruits = ['Apple', 'Banana', 'Mundiri', 'Mango', 'Orange'];
-const checkboxContainer = document.getElementById('checkboxContainer');
-const displayDiv = document.getElementById('displayDiv');
-var z = [0]
-fruits.map(element => {
+const displayDiv = document.createElement('div');
+document.body.appendChild(displayDiv);
+var z = [];
+fruits.forEach(element => {
     const checkbox = document.createElement('input');
     const label = document.createElement('label');
     label.htmlFor = element;
@@ -46,16 +46,14 @@ fruits.map(element => {
     document.body.appendChild(label);
     checkbox.addEventListener('change', function () {
         if (checkbox.checked) {
-            condainer.innerHTML = checkbox.value;
+            z.push(checkbox.value);
         }
         else {
-            condainer.innerHTML = "";
+            z = z.filter(element => element !== checkbox.value);
         }
-
-    })
-})
-
-
+        displayDiv.innerHTML = `${z}`;
+    });
+});
 // 3)Create a toggle button, console the values as either true/ false when toggled.
 function toggle() {
     let z = document.getElementById('toggle1');
@@ -88,7 +86,6 @@ function right() {
     counter++
     sildeingimg();
 }
-
 function sildeingimg() {
     images.forEach(element => {
         element.style.transform = `translateX(-${counter * 100}%)`;
