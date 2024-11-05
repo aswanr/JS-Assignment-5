@@ -80,17 +80,33 @@ images.forEach((element, index) => {
 })
 function left() {
     counter--
-    sildeingimg();
+    slidingimgleft();
 }
 function right() {
     counter++
-    sildeingimg();
+    slidingimg();
 }
-function sildeingimg() {
-    images.forEach(element => {
-        element.style.transform = `translateX(-${counter * 100}%)`;
-    })
+function slidingimg() { 
+    images.forEach(element => { 
+    if (element.style.transform === `translateX(-400%)`) { 
+        counter=0;
+        element.style.transform = `translatex(${counter * 100}%)`; 
+    } 
+    else { 
+        element.style.transform = `translateX(-${counter * 100}%)`         
+     } 
+});
+} 
+function slidingimgleft(){
+    images.forEach(element => { 
+    if (element.style.transform === `translateX(-400%)`) { 
+        counter=0;
+        element.style.transform = `translatex(${counter * 100}%)`; 
+    } 
+    else { 
+        element.style.transform = `translateX(${counter * 100}%)`         
+     } 
+})
 }
-
 
 
