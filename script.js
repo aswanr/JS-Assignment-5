@@ -1,5 +1,6 @@
 // 1)Create a button and div using JS, when clicked on the button your basic details should be shown in the div. 
 // The static html file should only contain the basic HTML structure, no div/buttons .
+
 const condainer = document.createElement('div');
 condainer.id = "cond-1";
 condainer.style.width = '250px';
@@ -74,7 +75,6 @@ function toggle() {
 
 const images = document.querySelectorAll('.sliders');
 var counter = 0;
-console.log(images);
 images.forEach((element, index) => {
     element.style.left = `${index * 100}%`;
 })
