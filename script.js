@@ -14,20 +14,19 @@ button1.innerText = "Just Click"
 button1.onclick = changes;
 document.body.appendChild(button1);
 
-function changes() {
-    const btnone = document.getElementById("btn-1");
-    let condain = document.getElementById("cond-1");
-    btnone.addEventListener('click', function () {
+const btnone = document.getElementById("btn-1");
+let condain = document.getElementById("cond-1");
+btnone.addEventListener('click', changes()); 
+condain.innerHTML="";
+function changes() {{
         if (condain.innerHTML == "ASWAN-R") {
-            condain.innerHTML = "";
+            condain.innerHTML ="";
         }
         else {
             condain.textContent = "ASWAN-R"
         }
-    })
-
+    }
 }
-
 // 2)Consider an array with name of 5 fruits, map this array and create five checkboxes with 
 // their corresponding names. In a div show the fruit names which are checked.
 
@@ -88,7 +87,7 @@ function right() {
 }
 function slidingimg() { 
     images.forEach(element => { 
-    if (element.style.transform === `translateX(-400%)`) { 
+    if (element.style.transform === `translateX(-300%)`) { 
         counter=0;
         element.style.transform = `translatex(${counter * 100}%)`; 
     } 
@@ -99,12 +98,12 @@ function slidingimg() {
 } 
 function slidingimgleft(){
     images.forEach(element => { 
-    if (element.style.transform === `translateX(-400%)`) { 
+    if (element.style.transform === `translateX(-300%)`) { 
         counter=0;
         element.style.transform = `translatex(${counter * 100}%)`; 
     } 
     else { 
-        element.style.transform = `translateX(${counter * 100}%)`         
+        element.style.transform = `translateX(${counter * 100}%)` ;       
      } 
 })
 }
