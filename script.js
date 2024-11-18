@@ -7,33 +7,30 @@ condainer.style.width = '250px';
 condainer.style.height = '250px';
 condainer.style.backgroundColor = 'red';
 document.body.appendChild(condainer);
-
 const button1 = document.createElement('button');
 button1.id = "btn-1";
 button1.innerText = "Just Click"
-button1.onclick = changes;
 document.body.appendChild(button1);
 
 const btnone = document.getElementById("btn-1");
 let condain = document.getElementById("cond-1");
-btnone.addEventListener('click', changes()); 
 condain.innerHTML="";
-function changes() {{
-        if (condain.innerHTML == "ASWAN-R") {
-            condain.innerHTML ="";
-        }
-        else {
-            condain.textContent = "ASWAN-R"
-        }
+btnone.addEventListener('click', namechange);
+function namechange() {
+    if (condain.innerHTML == "ASWAN-R") {
+        condain.innerHTML = "";
+    } else {
+        condain.textContent = "ASWAN-R";
     }
 }
+
 // 2)Consider an array with name of 5 fruits, map this array and create five checkboxes with 
 // their corresponding names. In a div show the fruit names which are checked.
 
 const fruits = ['Apple', 'Banana', 'Mundiri', 'Mango', 'Orange'];
 const displayDiv = document.createElement('div');
 document.body.appendChild(displayDiv);
-var z = [];
+let z = [];
 fruits.forEach(element => {
     const checkbox = document.createElement('input');
     const label = document.createElement('label');
@@ -49,7 +46,7 @@ fruits.forEach(element => {
             z.push(checkbox.value);
         }
         else {
-            z = z.filter(element => element !== checkbox.value);
+            z=z.filter(element => element !== checkbox.value);
         }
         displayDiv.innerHTML = `${z}`;
     });
@@ -59,9 +56,9 @@ function toggle() {
     let z = document.getElementById('toggle1');
     const y = document.getElementById('toggle');
     if (z.value == "True") {
-        z.value = "false"
+        z.value = "false";
         y.style.backgroundColor = "yellow"
-        console.log(z.value)
+        console.log(z.value);
     }
     else {
         z.value = "True"
@@ -73,7 +70,7 @@ function toggle() {
 // 4)Create an image slider without referring online codes, completely by yourself.
 
 const images = document.querySelectorAll('.sliders');
-var counter = 0;
+let counter = 0;
 images.forEach((element, index) => {
     element.style.left = `${index * 100}%`;
 })
@@ -88,12 +85,12 @@ function right() {
 function slidingimg() { 
     images.forEach(element => { 
     if (element.style.transform === `translateX(-300%)`) { 
-        counter=0;
+         counter=0;
         element.style.transform = `translatex(${counter * 100}%)`; 
     } 
     else { 
         element.style.transform = `translateX(-${counter * 100}%)`         
-     } 
+    } 
 });
 } 
 function slidingimgleft(){
@@ -104,8 +101,6 @@ function slidingimgleft(){
     } 
     else { 
         element.style.transform = `translateX(${counter * 100}%)` ;       
-     } 
+    } 
 })
 }
-
-
